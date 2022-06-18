@@ -185,7 +185,7 @@ File app/views/template/header.php
 ```
 
 File app/views/template/footer.php
-```php
+```html
     </section>
     <aside id="sidebar">
         <div class="widget-box">
@@ -224,6 +224,119 @@ Refresh halaman tersebut
 
 ![hasil](img/17.png)
 
-# Pertanyaan & Tugas
-Lengkapi kode program untuk menu lainnya yang ada pada Controller Page, sehingga semua link pada navigasi header dapat menampilkan tampilan dengan layout yang sama.
+# Praktikum 12: Framework Lanjutan (CRUD)
 
+Membuat program sederhana menggunakan Framework Codeigniter 4.
+
+# Langkah - Langkah Praktikum
+
+## 1). Membuat Database
+
+```MySQL
+CREATE DATABASE lab_ci4;
+```
+
+## 2). Membuat Tabel
+
+```MySQL
+CREATE TABLE artikel (
+id INT(11) auto_increment,
+judul VARCHAR(200) NOT NULL,
+isi TEXT,
+gambar VARCHAR(200),
+status TINYINT(1) DEFAULT 0,
+slug VARCHAR(200),
+PRIMARY KEY(id)
+);
+```
+
+## 3). Konfigurasi Koneksi Database
+
+Selanjutnya membuat konfigurasi untuk menghubungkan dengan database server. Konfigurasi dapat dilakukan dengan du acara, yaitu pada file app/config/database.php atau menggunakan file .env. Pada praktikum ini kita gunakan konfigurasi pada file .env.
+![konfig](img/dua.png)
+
+## 4). Membuat Model
+Selanjutnya adalah membuat Model untuk memproses data Artikel. Buat file baru pada direktori app/Models dengan nama artikelModel.php
+
+```php
+
+```
+
+## 5). Membuat Controller
+Buat Controller baru dengan nama Artikel.php pada direktori app/Controllers.
+
+```php
+
+```
+
+## 6). Membuat View
+Buat direktori baru dengan nama artikel pada direktori app/views, kemudian buat file baru dengan nama index.php.
+
+```php
+
+```
+
+Selanjutnya buka browser kembali, dengan mengakses url http://localhost:8080/artikel
+
+![artikel](img/satu.png)
+
+Belum ada data yang diampilkan. Kemudian coba tambahkan beberapa data pada database agar dapat ditampilkan datanya.
+
+```MySQL
+INSERT INTO artikel (judul, isi, slug) VALUE
+('Artikel pertama', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri
+percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi
+standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak
+dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah
+buku contoh huruf.', 'artikel-pertama'),
+('Artikel kedua', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah
+teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari
+era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih
+dari 2000 tahun.', 'artikel-kedua');
+```
+
+Refresh kembali browser, sehingga akan ditampilkan hasilnya.
+
+![hasil](img/tiga.png)
+
+## 7). Membuat Tampilan Detail Artikel
+Tampilan pada saat judul berita di klik maka akan diarahkan ke halaman yang berbeda. Tambahkan fungsi baru pada Controller Artikel dengan nama view().
+
+```php
+
+```
+
+## 8). Membuat View Detail
+Buat view baru untuk halaman detail dengan nama app/views/artikel/detail.php.
+
+```php
+
+```
+
+## 9). Membuat Routing untuk artikel detail
+Buka Kembali file app/config/Routes.php, kemudian tambahkan routing untuk artikel detail.
+
+```php
+$routes->get('/artikel/(:any)', 'Artikel::view/$1');
+```
+
+![kedua](img/empat.png)
+
+## 10). Membuat Menu Admin
+Menu admin adalah untuk proses CRUD data artikel. Buat method baru pada Controller Artikel dengan nama admin_index().
+
+```php
+
+```
+
+Selanjutnya buat view untuk tampilan admin dengan nama admin_index.php
+
+```php
+
+```
+
+Tambahkan routing untuk menu admin seperti berikut:
+
+```php
+
+```

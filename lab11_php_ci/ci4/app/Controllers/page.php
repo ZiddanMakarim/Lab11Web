@@ -15,7 +15,7 @@ class Page extends BaseController
     {
         return view('contact', [
             'title' => 'Halaman Contact',
-            'content' => 'Ini adalah halaman contact biasa nya berisi Contact sang pembuat halaman ini <h1> HERLIYANSYAH </h1>'
+            'content' => 'Ini adalah halaman contact biasa nya berisi Contact sang pembuat halaman ini <h1> Ziddan Makarim </h1>'
         ]);
     }
     public function faqs()
