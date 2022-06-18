@@ -1,5 +1,5 @@
 <footer>
-        <p>&copy; 2022 | Humam Fathurrahman</p>
+        <p>&copy; Ziddan Makarim</p>
     </footer>
     </div>
 </body>

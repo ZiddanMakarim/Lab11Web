@@ -224,6 +224,8 @@ Refresh halaman tersebut
 
 ![hasil](img/17.png)
 
+--------------------------------------------------------------------------------------------------------------------
+
 # Praktikum 12: Framework Lanjutan (CRUD)
 
 Membuat program sederhana menggunakan Framework Codeigniter 4.
@@ -340,3 +342,47 @@ Tambahkan routing untuk menu admin seperti berikut:
 ```php
 
 ```
+
+Akses menu admin dengan url http://localhost:8080/admin/artikel/
+
+![admin](img/lima.png)
+
+## 11). Menambah Data Artikel
+Tambahkan fungsi/method baru pada Controller Artikel dengan nama add().
+
+```php
+
+```
+
+Kemudian buat view untuk form tambah dengan nama form_add.php
+
+```php
+
+```
+
+![hasil](img/enam.png)
+
+## 12). Mengubah Data
+Tambahkan fungsi/method baru pada Controller Artikel dengan nama edit().
+
+```php
+
+```
+
+Kemudian buat view untuk form tambah dengan nama form_edit.php
+
+```php
+
+```
+
+![hasil](img/tujuh.png)
+
+## 13). Menghapus Data
+Tambahkan fungsi/method baru pada Controller Artikel dengan nama delete().
+
+```php
+
+```
+
+-----------------------------------------------------------------------------------------
+
