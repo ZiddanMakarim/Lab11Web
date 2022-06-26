@@ -47,11 +47,11 @@ class User extends BaseController
                 return redirect()->to('/user/login');
             }
         }
-        else
-        {
-            $session->setFlashdata("flash_msg", "email tidak terdaftar.");
-            return redirect()->to('/user/login');
-        }
+            else
+            {
+                $session->setFlashdata("flash_msg", "email tidak terdaftar.");
+                return redirect()->to('/user/login');
+            }
     }
     public function logout()
     {
